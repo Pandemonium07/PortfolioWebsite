@@ -1,0 +1,78 @@
+footer {
+  bottom: 0;
+  height: 2%;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer .reseaux {
+  padding: 0 30px 0 30px;
+}
+
+.reseaux a {
+  font-size: xx-large;
+  padding: 0 10px;
+  color: black;
+}
+
+footer .cgv,
+footer .mentions-legales {
+  margin-top: 20px;
+}
+
+footer .cgv a,
+footer .mentions-legales a {
+  color: $color-2;
+}
+
+/* Ajoutez ces styles pour des écrans de petite taille */
+@media (max-width: 768px) {
+  footer {
+    height: auto;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .reseaux {
+    padding: 0;
+  }
+
+  .reseaux a {
+    font-size: large;
+    margin: 0 5px;
+  }
+
+  .cgv,
+  .mentions-legales {
+    margin-top: 10px;
+  }
+}
+
+/* Ajoutez ces styles pour des écrans de grande taille */
+@media (min-width: 1025px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reseaux {
+    padding: 0;
+  }
+
+  .reseaux a {
+    font-size: xx-large;
+    margin: 0 10px;
+  }
+}

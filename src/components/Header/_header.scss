@@ -1,0 +1,152 @@
+nav {
+  width: 100%;
+}
+body nav .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+nav .navbar ul {
+  width: 100%;
+  padding: 2%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .navbar a:first-child {
+  margin-right: auto;
+  font-size: x-small;
+  font-style: italic;
+}
+nav .navbar a:first-child p:first-child {
+  font-size: large;
+  font-style: normal;
+}
+
+nav .navbar a {
+  font-size: x-large;
+  font-family: $font-1;
+  letter-spacing: 1px;
+  color: $white;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  height: 100%;
+  padding: 2%;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    color: $color-1;
+  }
+}
+
+nav .navbar .nav-active {
+  position: relative;
+}
+
+// Sidebar menu hamburger //
+
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60%;
+  z-index: 3333;
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: -10px 0 10px rgba($color: #000000, $alpha: 0.7);
+}
+
+nav .sidebar ul {
+  list-style-type: none;
+  height: 100%;
+  padding-right: 2%;
+}
+
+nav .sidebar ul a {
+  font-size: xx-large;
+  font-family: $font-1;
+
+  letter-spacing: 1px;
+  color: $white;
+  transition: 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-3;
+  }
+}
+nav .sidebar ul a:first-child li {
+  text-align: right;
+  padding: 5% 5% 70% 0;
+}
+
+nav .sidebar ul a:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+nav .sidebar ul a:not(:first-child) li {
+  padding: 8% 0 10% 5%;
+}
+
+// Animation sidebar
+nav .sidebar {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  @-webkit-keyframes slideInRight {
+    0% {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+}
+//Responsive
+@media (width<315px) {
+  nav .sidebar {
+    width: 100%;
+  }
+  nav .sidebar ul .close-hamburgers li {
+    padding-bottom: 20%;
+  }
+}
+
+@media (width>600px) {
+  .open-hamburgers {
+    display: none;
+  }
+}
+@media (width< 601px) {
+  nav .navbar a:not(:first-child, :last-child) {
+    display: none;
+    visibility: hidden;
+  }
+  nav a {
+    font-size: x-large;
+  }
+}

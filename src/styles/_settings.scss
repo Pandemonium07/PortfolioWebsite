@@ -1,0 +1,29 @@
+$font-1: "Abril Fatface", serif;
+$font-2: "Montserrat Alternates", sans-serif;
+$font-3: "Lobster", sans-serif;
+$font-4: "DM Serif Display", serif;
+$font-5: "Anton", sans-serif;
+$font-6: "Oswald", sans-serif;
+$font-7: "Quicksand", sans-serif;
+$font-8: "Protest Strike", sans-serif;
+
+$color-1: #eee2de;
+$color-2: #2d3250;
+$color-3: #7077a1;
+$color-4: #f1e4c3;
+$black: rgb(15, 15, 15);
+$white: white;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  max-height: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,254 @@
+/* Styles */
+nav .navbar {
+  position: fixed;
+  top: 0;
+  z-index: 2222;
+}
+.Home {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.Home section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que la vidéo remplit entièrement le conteneur */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Assure que la vidéo remplit entièrement le conteneur */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Assure que le bouton est au-dessus de la vidéo */
+}
+
+.button-container button {
+  font-size: 15px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: white; /* Couleur de l'icône flèche */
+  animation: arrowAnimation 2s ease-in-out infinite; /* Animation */
+}
+
+@keyframes arrowAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(20px) translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px) translateX(-50%);
+  }
+}
+.content1 {
+  position: relative;
+  z-index: 1000;
+}
+.content2 {
+  background-color: black;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.content2 div {
+  width: 50%;
+}
+.content2 img {
+  display: block;
+  margin: auto;
+  max-width: 50%;
+  border-radius: 30%; /* Espace entre l'image et le texte */
+}
+
+.content2 p {
+  text-align: justify;
+  padding: 5%;
+  margin: 0; /* Supprime les marges par défaut */
+}
+
+/*CONTENT 3*/
+
+.content3 {
+  background-color: black;
+  color: white;
+  flex-direction: column;
+}
+
+.content3 h2 {
+  font-size: xx-large;
+  padding-bottom: 5%;
+  color: white;
+}
+
+.content3 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content3 label {
+  margin: 10px 0 5px;
+}
+
+.content3 form textarea {
+  padding: 20px;
+  width: 150%;
+}
+
+.content3 input,
+.content3 textarea {
+  width: 100%;
+  padding: 4px;
+  margin-bottom: 5%;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.content3 button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff8800;
+  color: white;
+  cursor: pointer;
+}
+
+.content3 button:hover {
+  background-color: #ffffff;
+  color: black;
+}
+
+/*FOOTER*/
+
+.Home footer {
+  padding-top: 8%;
+  background-color: black;
+}
+.Home .cgv a,
+.Home .mentions-legales a,
+.Home .mentions-legales p {
+  color: $white;
+}
+.Home .reseaux a {
+  padding: 0 10px;
+  color: rgb(255, 255, 255);
+}
+/*Fullscreen*/
+
+.fullscreen-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Opacité de fond */
+  z-index: 5555; /* Assure que la section fullscreen est au-dessus de tout le reste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-section video {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.closevideofullscreen {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*RESPONSIVE*/
+
+@media (width< 601px) {
+  .content2 {
+    flex-direction: column; /* Change la direction des éléments en colonne */
+  }
+
+  .content2 div {
+    width: 100%; /* Prend toute la largeur de la colonne */
+  }
+  .content2 div:first-child {
+    width: 65%;
+    margin-top: 15%;
+  }
+  .content2 img {
+    margin-bottom: 20px; /* Ajoute un espace entre l'image et le paragraphe */
+  }
+}
+
+/* Indicators */
+.indicators {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #000;
+}
